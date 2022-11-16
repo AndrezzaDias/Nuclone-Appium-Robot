@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221115 21:57:17.471" rpa="false" schemaversion="3">
+<suite id="s1" name="Suite" source="C:\Users\Andreza\code\AppNu\Nuclone-appium-robot-master\nuclone-appium-robot-master\suite.robot">
+<test id="s1-t1" name="Ver meu saldo" line="8">
+<kw name="Abrir App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Teste</arg>
+<arg>app=${EXECDIR}/app/nuclone.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20221115 21:57:17.668" endtime="20221115 21:57:25.890"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=card-hero</arg>
+<arg>20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20221115 21:57:25.891" endtime="20221115 21:57:32.148"/>
+</kw>
+<status status="PASS" starttime="20221115 21:57:17.668" endtime="20221115 21:57:32.148"/>
+</kw>
+<kw name="Mostra saldo" library="steps">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=show-balance</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20221115 21:57:32.151" level="INFO">Clicking element 'accessibility_id=show-balance'.</msg>
+<status status="PASS" starttime="20221115 21:57:32.149" endtime="20221115 21:57:32.219"/>
+</kw>
+<status status="PASS" starttime="20221115 21:57:32.149" endtime="20221115 21:57:32.220"/>
+</kw>
+<kw name="Meu saldo deve ser de" library="steps">
+<arg>R$ 5.500,00</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=user-balance</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20221115 21:57:32.220" endtime="20221115 21:57:32.270"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>accessibility_id=user-balance</arg>
+<arg>R$ 5.500,00</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20221115 21:57:32.271" level="INFO">Verifying element 'accessibility_id=user-balance' contains exactly text 'R$ 5.500,00'.</msg>
+<status status="PASS" starttime="20221115 21:57:32.270" endtime="20221115 21:57:32.303"/>
+</kw>
+<status status="PASS" starttime="20221115 21:57:32.220" endtime="20221115 21:57:32.303"/>
+</kw>
+<status status="PASS" starttime="20221115 21:57:17.667" endtime="20221115 21:57:32.304"/>
+</test>
+<status status="PASS" starttime="20221115 21:57:17.473" endtime="20221115 21:57:32.304"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Suite">Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
